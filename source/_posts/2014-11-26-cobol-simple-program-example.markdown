@@ -5,6 +5,9 @@ date: 2014-11-26 13:21:34 +0700
 comments: true
 categories: cobol
 ---
+
+This is an example of cobol program.
+
 <!-- more -->
 
 {% codeblock lang:cobol Cobol Simple Program <a href=../../../../../downloads/code/cobol/example.cob ><span class="glyphicon glyphicon-floppy-disk"></span></a> %}
