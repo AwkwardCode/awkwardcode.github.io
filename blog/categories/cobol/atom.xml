@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Cobol | My Octopress Blog]]></title>
   <link href="http://awkwardcode.github.io/blog/categories/cobol/atom.xml" rel="self"/>
   <link href="http://awkwardcode.github.io/"/>
-  <updated>2014-11-26T14:03:16+07:00</updated>
+  <updated>2014-11-26T14:08:22+07:00</updated>
   <id>http://awkwardcode.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -21,7 +21,7 @@
     <content type="html"><![CDATA[<!-- more -->
 
 
-<p><figure class='code'><figcaption><span>Cobol Simple Program <a href=../../../../../downloads/code/cobol/example.cbl ><span class="glyphicon glyphicon-floppy-disk"></span></a> </span></figcaption>
+<p><figure class='code'><figcaption><span>Cobol Simple Program <a href=../../../../../downloads/code/cobol/example.cob ><span class="glyphicon glyphicon-floppy-disk"></span></a> </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
