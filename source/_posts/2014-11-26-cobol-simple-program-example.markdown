@@ -7,7 +7,7 @@ categories: cobol
 ---
 <!-- more -->
 
-{% codeblock lang:cobol Cobol Simple Program <a href=../../../../../downloads/code/cobol/example.cbl ><span class="glyphicon glyphicon-floppy-disk"></span></a> %}
+{% codeblock lang:cobol Cobol Simple Program <a href=../../../../../downloads/code/cobol/example.cob ><span class="glyphicon glyphicon-floppy-disk"></span></a> %}
        IDENTIFICATION DIVISION.
        PROGRAM-ID. TEST.
        ENVIRONMENT DIVISION.
