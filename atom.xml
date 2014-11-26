@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Awkward Code]]></title>
   <link href="http://awkwardcode.github.io/atom.xml" rel="self"/>
   <link href="http://awkwardcode.github.io/"/>
-  <updated>2014-11-26T14:08:22+07:00</updated>
+  <updated>2014-11-26T14:21:37+07:00</updated>
   <id>http://awkwardcode.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
-    <email><![CDATA[mailto:lukmanh1995@gmail.com]]></email>
+    <name><![CDATA[Pawsky]]></name>
+    
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
@@ -18,7 +18,9 @@
     <link href="http://awkwardcode.github.io/blog/2014/11/26/cobol-simple-program-example/"/>
     <updated>2014-11-26T13:21:34+07:00</updated>
     <id>http://awkwardcode.github.io/blog/2014/11/26/cobol-simple-program-example</id>
-    <content type="html"><![CDATA[<!-- more -->
+    <content type="html"><![CDATA[<p>This is an example of cobol program.</p>
+
+<!-- more -->
 
 
 
