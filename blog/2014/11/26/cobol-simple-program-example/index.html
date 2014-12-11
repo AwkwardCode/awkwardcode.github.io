@@ -199,93 +199,131 @@
 <span class='line-number'>86</span>
 <span class='line-number'>87</span>
 <span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
 </pre></td><td class='code'><pre><code class='cobol'><span class='line'><span class="c">      </span> <span class="kr">IDENTIFICATION</span> <span class="kr">DIVISION</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span> <span class="kr">PROGRAM-ID</span><span class="p">.</span> <span class="kp">TEST</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span> <span class="kr">ENVIRONMENT</span> <span class="kr">DIVISION</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="kr">PROGRAM-ID</span><span class="p">.</span> <span class="nv">SIMPLE-APP</span><span class="p">.</span>
 </span><span class='line'><span class="c">      </span> <span class="kr">DATA</span> <span class="kr">DIVISION</span><span class="p">.</span>
 </span><span class='line'><span class="c">      </span> <span class="kr">WORKING-STORAGE</span> <span class="kr">SECTION</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span> <span class="mi">01 </span><span class="nv">VARIABEL</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">PIL</span> <span class="kt">PIC 9</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">NILAI</span> <span class="kt">PIC 9</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">A</span> <span class="kt">PIC 9</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">B</span> <span class="kt">PIC 9</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">B1</span> <span class="kt">PIC ZZ</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">NAMA</span> <span class="kt">PIC A(20)</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">KELAS</span> <span class="kt">PIC X(5)</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">NPM</span> <span class="kt">PIC 9(8)</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">UTS</span> <span class="kt">PIC 99</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">UAS</span> <span class="kt">PIC 99</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">HASIL</span> <span class="kt">PIC 99</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="mi">01 </span><span class="nv">VAR-MENU</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">PILIHAN</span> <span class="kt">PIC 9</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="mi">01 </span><span class="nv">VAR-ULANG</span><span class="p">.</span>
 </span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">ULANG</span> <span class="kt">PIC A</span><span class="p">.</span>
 </span><span class='line'><span class="c">      </span>     <span class="mi">88 </span><span class="nv">YA</span> <span class="kp">VALUE </span><span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">.</span>
 </span><span class='line'><span class="c">      </span>     <span class="mi">88 </span><span class="nv">TIDAK</span> <span class="kp">VALUE </span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="mi">01 </span><span class="nv">VAR-BIODATA</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">NAMA</span> <span class="kt">PIC A(20)</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">KELAS</span> <span class="kt">PIC X(6)</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">NPM</span> <span class="kt">PIC X(8)</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="mi">01 </span><span class="nv">VAR-NILAI</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">UTS</span> <span class="kt">PIC 99</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">UAS</span> <span class="kt">PIC 99</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">HASIL</span> <span class="kt">PIC 999</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="mi">01 </span><span class="nv">VAR-LOOPING</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">JUMLAH</span> <span class="kt">PIC 9</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">X</span> <span class="kt">PIC 9</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">Y</span> <span class="kt">PIC 9</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="nv">Z</span> <span class="kt">PIC ZZ</span><span class="p">.</span>
 </span><span class='line'><span class="c">      </span> <span class="kr">SCREEN</span> <span class="kr">SECTION</span><span class="p">.</span>
 </span><span class='line'><span class="c">      </span> <span class="mi">01 </span><span class="nv">CLS</span><span class="p">.</span>
 </span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">BLANK</span> <span class="kr">SCREEN</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span> <span class="mi">01 </span><span class="nv">MENU</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">3 </span><span class="kp">COLUMN</span> <span class="mi">5 </span><span class="kp">VALUE </span><span class="s1">&#39;&gt;&gt;PROGRAM MENU&lt;&lt;&#39;</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">4 </span><span class="kp">COLUMN</span> <span class="mi">5 </span><span class="kp">VALUE </span><span class="s1">&#39; 1. INPUT OUTPUT &#39;</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">5 </span><span class="kp">COLUMN</span> <span class="mi">5 </span><span class="kp">VALUE </span><span class="s1">&#39; 2. KONDISI &#39;</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">6 </span><span class="kp">COLUMN</span> <span class="mi">5 </span><span class="kp">VALUE </span><span class="s1">&#39; 3. PERULANGAN &#39;</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">7 </span><span class="kp">COLUMN</span> <span class="mi">5 </span><span class="kp">VALUE </span><span class="s1">&#39; 4. EXIT &#39;</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">8 </span><span class="kp">COLUMN</span> <span class="mi">5 </span><span class="kp">VALUE </span><span class="s1">&#39; MASUKKAN PILIHAN ANDA : &#39;</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">COLUMN</span> <span class="kp">PLUS</span> <span class="mi">2 </span><span class="kt">PIC 9</span> <span class="kp">TO</span> <span class="nv">PIL</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span> <span class="mi">01 </span><span class="nv">BIODATA</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">14 </span><span class="kp">COLUMN</span> <span class="mi">5 </span><span class="kp">VALUE </span><span class="s1">&#39;NAMA : &#39;</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">COLUMN</span> <span class="kp">PLUS</span> <span class="mi">1 </span><span class="kp">TO</span> <span class="nv">NAMA</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">15 </span><span class="kp">COLUMN</span> <span class="mi">5 </span><span class="kp">VALUE </span><span class="s1">&#39;KELAS : &#39;</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">COLUMN</span> <span class="kp">PLUS</span> <span class="mi">1 </span><span class="kp">TO</span> <span class="nv">KELAS</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">16 </span><span class="kp">COLUMN</span> <span class="mi">5 </span><span class="kp">VALUE </span><span class="s1">&#39;NPM : &#39;</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">COLUMN</span> <span class="kp">PLUS</span> <span class="mi">1 </span><span class="kp">TO</span> <span class="nv">NPM</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="mi">01 </span><span class="nv">INPUT-MENU</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">1 </span><span class="kp">COLUMN</span> <span class="mi">4 </span><span class="kp">VALUE </span><span class="s1">&#39;-- MENU --&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">3 </span><span class="kp">COLUMN</span> <span class="mi">1 </span><span class="kp">VALUE </span><span class="s1">&#39;1. INPUT OUTPUT&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">4 </span><span class="kp">COLUMN</span> <span class="mi">1 </span><span class="kp">VALUE </span><span class="s1">&#39;2. KONDISI&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">5 </span><span class="kp">COLUMN</span> <span class="mi">1 </span><span class="kp">VALUE </span><span class="s1">&#39;3. PERULANGAN&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">6 </span><span class="kp">COLUMN</span> <span class="mi">1 </span><span class="kp">VALUE </span><span class="s1">&#39;4. EXIT&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">8 </span><span class="kp">COLUMN</span> <span class="mi">1 </span><span class="kp">VALUE </span><span class="s1">&#39;MASUKAN PILIHAN :&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">COLUMN</span> <span class="kp">PLUS</span> <span class="mi">1 </span><span class="kt">PIC 9</span> <span class="kp">TO</span> <span class="nv">PILIHAN</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="mi">01 </span><span class="nv">INPUT-BIODATA</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">1 </span><span class="kp">COLUMN</span> <span class="mi">1 </span><span class="kp">VALUE </span><span class="s1">&#39;INPUT OUTPUT&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">3 </span><span class="kp">COLUMN</span> <span class="mi">1 </span><span class="kp">VALUE </span><span class="s1">&#39;MASUKAN NAMA  :&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">COLUMN</span> <span class="kp">PLUS</span> <span class="mi">1 </span><span class="kt">PIC A(20)</span> <span class="kp">TO</span> <span class="nv">NAMA</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">4 </span><span class="kp">COLUMN</span> <span class="mi">1 </span><span class="kp">VALUE </span><span class="s1">&#39;MASUKAN KELAS :&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">COLUMN</span> <span class="kp">PLUS</span> <span class="mi">1 </span><span class="kt">PIC X(6)</span> <span class="kp">TO</span> <span class="nv">KELAS</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">5 </span><span class="kp">COLUMN</span> <span class="mi">1 </span><span class="kp">VALUE </span><span class="s1">&#39;MASUKAN NPM   :&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">COLUMN</span> <span class="kp">PLUS</span> <span class="mi">1 </span><span class="kt">PIC X(8)</span> <span class="kp">TO</span> <span class="nv">NPM</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="mi">01 </span><span class="nv">INPUT-NILAI</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">1 </span><span class="kp">COLUMN</span> <span class="mi">1 </span><span class="kp">VALUE </span><span class="s1">&#39;KONDISI&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">3 </span><span class="kp">COLUMN</span> <span class="mi">1 </span><span class="kp">VALUE </span><span class="s1">&#39;MASUKAN NILAI UTS :&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">COLUMN</span> <span class="kp">PLUS</span> <span class="mi">1 </span><span class="kt">PIC 99</span> <span class="kp">TO</span> <span class="nv">UTS</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">4 </span><span class="kp">COLUMN</span> <span class="mi">1 </span><span class="kp">VALUE </span><span class="s1">&#39;MASUKAN NILAI UAS :&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">COLUMN</span> <span class="kp">PLUS</span> <span class="mi">1 </span><span class="kt">PIC 99</span> <span class="kp">TO</span> <span class="nv">UAS</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="mi">01 </span><span class="nv">INPUT-LOOPING</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">1 </span><span class="kp">COLUMN</span> <span class="mi">1 </span><span class="kp">VALUE </span><span class="s1">&#39;LOOPING&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">LINE</span> <span class="mi">3 </span><span class="kp">COLUMN</span> <span class="mi">1 </span><span class="kp">VALUE </span><span class="s1">&#39;MASUKAN BANYAK LOOPING :&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="mi">02 </span><span class="kp">COLUMN</span> <span class="kp">PLUS</span> <span class="mi">1 </span><span class="kt">PIC 9</span> <span class="kp">TO</span> <span class="nv">JUMLAH</span><span class="p">.</span>
 </span><span class='line'><span class="c">      </span> <span class="kr">PROCEDURE</span> <span class="kr">DIVISION</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span> <span class="nv">TAMPIL-MENU</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="nv">SHOW-MENU</span><span class="p">.</span>
 </span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="nv">CLS</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="nv">MENU</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">ACCEPT</span> <span class="nv">MENU</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">IF</span> <span class="nv">PIL</span> <span class="o">=</span> <span class="mi">1 </span><span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">AWAL1</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">IF</span> <span class="nv">PIL</span> <span class="o">=</span> <span class="mi">2 </span><span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">AWAL2</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">IF</span> <span class="nv">PIL</span> <span class="o">=</span> <span class="mi">3 </span><span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">AWAL3</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">IF</span> <span class="nv">PIL</span> <span class="o">=</span> <span class="mi">4 </span><span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">AKHIR</span> <span class="kr">ELSE</span> <span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">SALAH</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span> <span class="nv">AWAL1</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY </span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="s1">&#39;PROGRAM BIODATA&#39;</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="nv">BIODATA</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="nv">NAMA</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="nv">KELAS</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="nv">NPM</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">PILIHAN</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span> <span class="nv">AWAL2</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY </span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="s1">&#39;PROGRAM KONDISI&#39;</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY </span><span class="s1">&#39;MASUKKAN NILAI UTS ANDA : &#39;</span> <span class="kr">ACCEPT</span> <span class="nv">UTS</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY </span><span class="s1">&#39;MASUKKAN NILAI UAS ANDA : &#39;</span> <span class="kr">ACCEPT</span> <span class="nv">UAS</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">COMPUTE </span> <span class="nv">HASIL</span> <span class="o">=</span> <span class="p">(</span> <span class="nv">UTS</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">7 </span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span> <span class="nv">UAS</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">3 </span><span class="p">).</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">IF</span> <span class="nv">HASIL</span> <span class="o">&gt;</span> <span class="mi">70 </span><span class="kr">DISPLAY </span><span class="s1">&#39;LULUS</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="nv">INPUT-MENU</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">ACCEPT</span> <span class="nv">INPUT-MENU</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">IF</span> <span class="nv">PILIHAN</span> <span class="o">=</span> <span class="mi">1 </span><span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">SHOW-BIODATA</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">IF</span> <span class="nv">PILIHAN</span> <span class="o">=</span> <span class="mi">2 </span><span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">SHOW-NILAI</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">IF</span> <span class="nv">PILIHAN</span> <span class="o">=</span> <span class="mi">3 </span><span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">SHOW-LOOPING</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">IF</span> <span class="nv">PILIHAN</span> <span class="o">=</span> <span class="mi">4 </span><span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">FINISH</span> <span class="kr">ELSE</span> <span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">INPUTAN-SALAH</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="nv">SHOW-BIODATA</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="nv">CLS</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="nv">INPUT-BIODATA</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">ACCEPT</span> <span class="nv">INPUT-BIODATA</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="no">SPACE</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY </span><span class="s1">&#39;-----------------------------&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY </span><span class="s1">&#39;NAMA ANDA &#39;</span><span class="p">,</span> <span class="nv">NAMA</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY </span><span class="s1">&#39;KELAS ANDA &#39;</span><span class="p">,</span> <span class="nv">KELAS</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY </span><span class="s1">&#39;NPM ANDA &#39;</span><span class="p">,</span> <span class="nv">NPM</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">REPEAT-PROGRAM</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="nv">SHOW-NILAI</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="nv">CLS</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="nv">INPUT-NILAI</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">ACCEPT</span> <span class="nv">INPUT-NILAI</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="no">SPACE</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY </span><span class="s1">&#39;-----------------------------&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">COMPUTE</span> <span class="nv">HASIL</span> <span class="o">=</span> <span class="p">(</span><span class="nv">UTS</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">7</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nv">UAS</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">3</span><span class="p">).</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">IF</span> <span class="nv">HASIL</span> <span class="o">&gt;</span> <span class="mi">70 </span><span class="kr">DISPLAY </span><span class="s1">&#39;LULUS&#39;</span>
 </span><span class='line'><span class="c">      </span>     <span class="kr">ELSE</span> <span class="kr">DISPLAY </span><span class="s1">&#39;GAGAL&#39;</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">PILIHAN</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span> <span class="nv">AWAL3</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY </span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="s1">&#39;PROGRAM PERULANGAN&#39;</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY </span><span class="s1">&#39;MASUKKAN ANGKA : &#39;</span> <span class="kr">ACCEPT</span> <span class="nv">NILAI</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">PERFORM</span> <span class="nv">TAMPIL</span>
-</span><span class='line'><span class="c">      </span>     <span class="kp">VARYING</span> <span class="nv">A</span> <span class="kp">FROM</span> <span class="mi">1 </span><span class="kp">BY</span> <span class="mi">1 </span><span class="kp">UNTIL</span> <span class="nv">A</span> <span class="o">&gt;</span> <span class="nv">NILAI</span>
-</span><span class='line'><span class="c">      </span>         <span class="kp">AFTER</span> <span class="nv">B</span> <span class="kp">FROM</span> <span class="mi">1 </span><span class="kp">BY</span> <span class="mi">1 </span><span class="kp">UNTIL</span> <span class="nv">B</span> <span class="o">&gt;</span> <span class="nv">A</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">PILIHAN</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span> <span class="nv">SALAH</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY </span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="s1">&#39; &#39;</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">STOP</span><span class="p">,</span> <span class="s1">&#39;SALAH MASUKKAN INPUTAN&#39;</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">TAMPIL-MENU</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span> <span class="nv">AKHIR</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY </span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="s1">&#39;TERIMAKASIH&#39;</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">STOP</span> <span class="kp">RUN</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span> <span class="nv">PILIHAN</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY </span><span class="s1">&#39; &#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">REPEAT-PROGRAM</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="nv">SHOW-LOOPING</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="nv">CLS</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="nv">INPUT-LOOPING</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">ACCEPT</span> <span class="nv">INPUT-LOOPING</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="no">SPACE</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY </span><span class="s1">&#39;-----------------------------&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">PERFORM</span> <span class="nv">DO-LOOP</span>
+</span><span class='line'><span class="c">      </span>     <span class="kp">VARYING</span> <span class="nv">X</span> <span class="kp">FROM</span> <span class="mi">1 </span><span class="kp">BY</span> <span class="mi">1 </span><span class="kp">UNTIL</span> <span class="nv">X</span> <span class="o">&gt;</span> <span class="nv">JUMLAH</span>
+</span><span class='line'><span class="c">      </span>         <span class="kp">AFTER</span> <span class="nv">Y</span> <span class="kp">FROM</span> <span class="mi">1 </span><span class="kp">BY</span> <span class="mi">1 </span><span class="kp">UNTIL</span> <span class="nv">Y</span> <span class="o">&gt;</span> <span class="nv">X</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">REPEAT-PROGRAM</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="nv">DO-LOOP</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">MOVE</span> <span class="nv">Y</span> <span class="kp">TO</span> <span class="nv">Z</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY </span><span class="p">(,</span> <span class="p">)</span> <span class="nv">Z</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">IF</span> <span class="nv">X</span> <span class="o">=</span> <span class="nv">Y</span> <span class="kr">DISPLAY</span> <span class="no">SPACE</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="nv">INPUTAN-SALAH</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="no">SPACE</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">STOP</span><span class="p">,</span> <span class="s1">&#39;SALAH MEMASUKAN INPUTAN&#39;</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">SHOW-MENU</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="nv">REPEAT-PROGRAM</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY</span> <span class="no">SPACE</span><span class="p">.</span>
 </span><span class='line'><span class="c">      </span>     <span class="kr">DISPLAY </span><span class="s1">&#39;KEMBALI KE MENU ? [Y/T]&#39;</span><span class="p">.</span>
 </span><span class='line'><span class="c">      </span>     <span class="kr">ACCEPT</span> <span class="nv">ULANG</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">IF</span> <span class="nv">YA</span> <span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">TAMPIL-MENU</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span>     <span class="kr">IF</span> <span class="nv">YA</span> <span class="kr">GO</span> <span class="kp">TO</span> <span class="nv">SHOW-MENU</span><span class="p">.</span>
 </span><span class='line'><span class="c">      </span>     <span class="kr">STOP</span> <span class="kp">RUN</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span> <span class="nv">TAMPIL</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">MOVE</span> <span class="nv">B</span> <span class="kp">TO</span> <span class="nv">B1</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="nv">DISLAY</span> <span class="p">(,</span> <span class="p">)</span> <span class="nv">B1</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span>     <span class="kr">IF</span> <span class="nv">A</span> <span class="o">=</span> <span class="nv">B</span> <span class="kr">DISPLAY</span> <span class="no">SPACE</span><span class="p">.</span>
-</span><span class='line'><span class="c">      </span> <span class="nv">SELESAI</span><span class="p">.</span>
+</span><span class='line'><span class="c">      </span> <span class="nv">FINISH</span><span class="p">.</span>
 </span><span class='line'><span class="c">      </span>     <span class="kr">STOP</span> <span class="kp">RUN</span><span class="p">.</span>
 </span></code></pre></td></tr></table></div></figure>
 
