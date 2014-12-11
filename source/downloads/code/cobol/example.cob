@@ -1,88 +1,107 @@
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. TEST.
-       ENVIRONMENT DIVISION.
+       PROGRAM-ID. SIMPLE-APP.
        DATA DIVISION.
        WORKING-STORAGE SECTION.
-       01 VARIABEL.
-           02 PIL PIC 9.
-           02 NILAI PIC 9.
-           02 A PIC 9.
-           02 B PIC 9.
-           02 B1 PIC ZZ.
-           02 NAMA PIC A(20).
-           02 KELAS PIC X(5).
-           02 NPM PIC 9(8).
-           02 UTS PIC 99.
-           02 UAS PIC 99.
-           02 HASIL PIC 99.
+       01 VAR-MENU.
+           02 PILIHAN PIC 9.
+       01 VAR-ULANG.
            02 ULANG PIC A.
            88 YA VALUE 'Y', 'y'.
            88 TIDAK VALUE 'T', 't'.
+       01 VAR-BIODATA.
+           02 NAMA PIC A(20).
+           02 KELAS PIC X(6).
+           02 NPM PIC X(8).
+       01 VAR-NILAI.
+           02 UTS PIC 99.
+           02 UAS PIC 99.
+           02 HASIL PIC 999.
+       01 VAR-LOOPING.
+           02 JUMLAH PIC 9.
+           02 X PIC 9.
+           02 Y PIC 9.
+           02 Z PIC ZZ.
        SCREEN SECTION.
        01 CLS.
            02 BLANK SCREEN.
-       01 MENU.
-           02 LINE 3 COLUMN 5 VALUE '>>PROGRAM MENU<<'.
-           02 LINE 4 COLUMN 5 VALUE ' 1. INPUT OUTPUT '.
-           02 LINE 5 COLUMN 5 VALUE ' 2. KONDISI '.
-           02 LINE 6 COLUMN 5 VALUE ' 3. PERULANGAN '.
-           02 LINE 7 COLUMN 5 VALUE ' 4. EXIT '.
-           02 LINE 8 COLUMN 5 VALUE ' MASUKKAN PILIHAN ANDA : '.
-           02 COLUMN PLUS 2 PIC 9 TO PIL.
-       01 BIODATA.
-           02 LINE 14 COLUMN 5 VALUE 'NAMA : '.
-           02 COLUMN PLUS 1 TO NAMA.
-           02 LINE 15 COLUMN 5 VALUE 'KELAS : '.
-           02 COLUMN PLUS 1 TO KELAS.
-           02 LINE 16 COLUMN 5 VALUE 'NPM : '.
-           02 COLUMN PLUS 1 TO NPM.
+       01 INPUT-MENU.
+           02 LINE 1 COLUMN 4 VALUE '-- MENU --'.
+           02 LINE 3 COLUMN 1 VALUE '1. INPUT OUTPUT'.
+           02 LINE 4 COLUMN 1 VALUE '2. KONDISI'.
+           02 LINE 5 COLUMN 1 VALUE '3. PERULANGAN'.
+           02 LINE 6 COLUMN 1 VALUE '4. EXIT'.
+           02 LINE 8 COLUMN 1 VALUE 'MASUKAN PILIHAN :'.
+           02 COLUMN PLUS 1 PIC 9 TO PILIHAN.
+       01 INPUT-BIODATA.
+           02 LINE 1 COLUMN 1 VALUE 'INPUT OUTPUT'.
+           02 LINE 3 COLUMN 1 VALUE 'MASUKAN NAMA  :'.
+           02 COLUMN PLUS 1 PIC A(20) TO NAMA.
+           02 LINE 4 COLUMN 1 VALUE 'MASUKAN KELAS :'.
+           02 COLUMN PLUS 1 PIC X(6) TO KELAS.
+           02 LINE 5 COLUMN 1 VALUE 'MASUKAN NPM   :'.
+           02 COLUMN PLUS 1 PIC X(8) TO NPM.
+       01 INPUT-NILAI.
+           02 LINE 1 COLUMN 1 VALUE 'KONDISI'.
+           02 LINE 3 COLUMN 1 VALUE 'MASUKAN NILAI UTS :'.
+           02 COLUMN PLUS 1 PIC 99 TO UTS.
+           02 LINE 4 COLUMN 1 VALUE 'MASUKAN NILAI UAS :'.
+           02 COLUMN PLUS 1 PIC 99 TO UAS.
+       01 INPUT-LOOPING.
+           02 LINE 1 COLUMN 1 VALUE 'LOOPING'.
+           02 LINE 3 COLUMN 1 VALUE 'MASUKAN BANYAK LOOPING :'.
+           02 COLUMN PLUS 1 PIC 9 TO JUMLAH.
        PROCEDURE DIVISION.
-       TAMPIL-MENU.
+       SHOW-MENU.
            DISPLAY CLS.
-           DISPLAY MENU.
-           ACCEPT MENU.
-           IF PIL = 1 GO TO AWAL1.
-           IF PIL = 2 GO TO AWAL2.
-           IF PIL = 3 GO TO AWAL3.
-           IF PIL = 4 GO TO AKHIR ELSE GO TO SALAH.
-       AWAL1.
-           DISPLAY (13, 5) 'PROGRAM BIODATA'.
-           DISPLAY BIODATA.
-           DISPLAY NAMA.
-           DISPLAY KELAS.
-           DISPLAY NPM.
-           GO TO PILIHAN.
-       AWAL2.
-           DISPLAY (13, 5) 'PROGRAM KONDISI'.
-           DISPLAY 'MASUKKAN NILAI UTS ANDA : ' ACCEPT UTS.
-           DISPLAY 'MASUKKAN NILAI UAS ANDA : ' ACCEPT UAS.
-           COMPUTE  HASIL = ( UTS * 0.7 ) + ( UAS * 0.3 ).
-           IF HASIL > 70 DISPLAY 'LULUS
+           DISPLAY INPUT-MENU.
+           ACCEPT INPUT-MENU.
+           IF PILIHAN = 1 GO TO SHOW-BIODATA.
+           IF PILIHAN = 2 GO TO SHOW-NILAI.
+           IF PILIHAN = 3 GO TO SHOW-LOOPING.
+           IF PILIHAN = 4 GO TO FINISH ELSE GO TO INPUTAN-SALAH.
+       SHOW-BIODATA.
+           DISPLAY CLS.
+           DISPLAY INPUT-BIODATA.
+           ACCEPT INPUT-BIODATA.
+           DISPLAY SPACE.
+           DISPLAY '-----------------------------'.
+           DISPLAY 'NAMA ANDA ', NAMA.
+           DISPLAY 'KELAS ANDA ', KELAS.
+           DISPLAY 'NPM ANDA ', NPM.
+           GO TO REPEAT-PROGRAM.
+       SHOW-NILAI.
+           DISPLAY CLS.
+           DISPLAY INPUT-NILAI.
+           ACCEPT INPUT-NILAI.
+           DISPLAY SPACE.
+           DISPLAY '-----------------------------'.
+           COMPUTE HASIL = (UTS * 0.7) + (UAS * 0.3).
+           IF HASIL > 70 DISPLAY 'LULUS'
            ELSE DISPLAY 'GAGAL'.
-           GO TO PILIHAN.
-       AWAL3.
-           DISPLAY (13, 5) 'PROGRAM PERULANGAN'.
-           DISPLAY 'MASUKKAN ANGKA : ' ACCEPT NILAI.
-           PERFORM TAMPIL
-           VARYING A FROM 1 BY 1 UNTIL A > NILAI
-               AFTER B FROM 1 BY 1 UNTIL B > A.
-           GO TO PILIHAN.
-       SALAH.
-           DISPLAY (13, 5) ' '.
-           STOP, 'SALAH MASUKKAN INPUTAN'.
-           GO TO TAMPIL-MENU.
-       AKHIR.
-           DISPLAY (13, 5) 'TERIMAKASIH'.
-           STOP RUN.
-       PILIHAN.
-           DISPLAY ' '.
+           GO TO REPEAT-PROGRAM.
+       SHOW-LOOPING.
+           DISPLAY CLS.
+           DISPLAY INPUT-LOOPING.
+           ACCEPT INPUT-LOOPING.
+           DISPLAY SPACE.
+           DISPLAY '-----------------------------'.
+           PERFORM DO-LOOP
+           VARYING X FROM 1 BY 1 UNTIL X > JUMLAH
+               AFTER Y FROM 1 BY 1 UNTIL Y > X.
+           GO TO REPEAT-PROGRAM.
+       DO-LOOP.
+           MOVE Y TO Z.
+           DISPLAY (, ) Z, ' '.
+           IF X = Y DISPLAY SPACE.
+       INPUTAN-SALAH.
+           DISPLAY SPACE.
+           STOP, 'SALAH MEMASUKAN INPUTAN'.
+           GO TO SHOW-MENU.
+       REPEAT-PROGRAM.
+           DISPLAY SPACE.
            DISPLAY 'KEMBALI KE MENU ? [Y/T]'.
            ACCEPT ULANG.
-           IF YA GO TO TAMPIL-MENU.
+           IF YA GO TO SHOW-MENU.
            STOP RUN.
-       TAMPIL.
-           MOVE B TO B1.
-           DISLAY (, ) B1, ' '.
-           IF A = B DISPLAY SPACE.
-       SELESAI.
+       FINISH.
            STOP RUN.
